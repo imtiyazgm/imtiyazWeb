@@ -1,0 +1,92 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block title %}| BlogPage{% endblock title %}
+{% block content %}
+ <div class="container">
+  <div class="layout">
+    
+    <div class="column column--1of3">
+      <a class="tag tag--pill tag--main" href="{% url 'blog_TableList' %}">Viev as Table</a>      
+        <div class="card text-center">        
+          <div class="card__body dev">
+            <a class="tag tag--pill tag--main" href="{% url 'blog_list' %}">All</a>         
+        <ul>    
+            {% for cat in categoryList %}               
+                <li class="tag tag--pill tag--main" style= "list-style:None">  
+                 <a href="{% url 'blog_list' %}?category={{cat.name}}">{{cat.name}}</a>
+                </li>          
+             {% endfor %}
+             
+        </ul>    
+                
+        </div>
+        </div>
+      </div>  
+  
+    <div class="column column--2of3">
+    <div class="devInfo">
+        <div class="grid grid--three">
+            {% for Blog in blogList %}  
+          <div class="column">
+            <div class="card project">
+              <a href="{% url 'blog_Details' Blog.id %}" class="project">
+                <div class="card__body">
+                  <p class="project__title">{{Blog.blgoTiltle}}</p>
+                  <hr> 
+                  <small>By: - Imtiyaz</small>
+                  <p>Category:  {{Blog.blogCategory}} </p>
+                </div>
+              </a>
+            </div>
+            {% if user.is_authenticated %}
+            <a href="{% url 'update_Blog' Blog.id %}" >
+            <span class="tag tag--pill tag--main">
+              <small>Update</small> 
+            </span></a>
+            <a href="{% url 'delete_Blog' Blog.id %}" >
+            <span class="tag tag--pill tag--main">
+              <small>Delete</small> 
+            </span></a>
+            {% endif %}
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+    </div>
+</div>
+
+
+<!--
+  <div class="devInfo">
+  <h3 class="devInfo__title">Skills</h3>
+  <div class="devInfo__skills">
+    <div class="devSkill">
+      <h4 class="devSkill__title">JavaScript</h4>
+      <p class="devSkill__info">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae neque voluptatum ut? Quaerat, ea
+        cumque! Dolorum provident esse molestias commodi odit sapiente quod quasi corrupti obcaecati? Nobis
+        ex temporibus quaerat!
+      </p>
+    </div>
+    <div class="devSkill">
+      <h4 class="devSkill__title">React</h4>
+      <p class="devSkill__info">
+        Smet consectetur adipisicing elit. Omnis, nihil? Accusamus aspernatur aut debitis vitae quaerat
+        nihil fugiat, doloremque nesciunt alias pariatur maxime unde, nam saepe laborum at odit labore.
+      </p>
+    </div>
+    <div class="devSkill">
+      <h4 class="devSkill__title">Express(Nodejs)</h4>
+      <p class="devSkill__info">
+        Auae error deleniti aperiam enim nisi nesciunt, ratione eveniet eos fuga ad recusandae mollitia!
+        Facere earum, distinctio nihil recusandae ipsum nesciunt. Possimus, ex. Officia maxime nihil
+        inventore cum tenetur! Veritatis sapiente libero ducimus nesciunt itaque, placeat inventore sint
+        blanditiis?
+      </p>
+    </div>
+
+-->
+
+
+{% endblock content %}

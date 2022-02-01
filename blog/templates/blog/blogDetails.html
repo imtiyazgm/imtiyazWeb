@@ -1,0 +1,42 @@
+{% extends 'main.html' %}
+{% load static %}
+{% block title %}| BlogPage{% endblock title %}
+{% block content %}
+<div class="container">
+    <div class="layout">
+      <a class="tag tag--pill tag--main" href="{% url 'blog_list' %}">Back</a>
+        <div class="card project">
+        <div class="card__body">
+                
+            <h3 class="project__title">{{blogobj.blgoTiltle}}</h3>
+            <hr> 
+            <small>By: - Imtiyaz</small>
+                                              
+            <p> {{blogobj.blogCategory}}</p>
+            <div class="project__tags">
+              <p>{{blogobj.blgoDetails|safe}}</p>
+            </div>
+            
+          </div>
+    </div>
+</div>
+{% if blogobj.blogImage %}
+<div class="layout">
+<div class="card project">
+<div class="card__body">
+<img src="{{ blogobj.blogImage.url}}" alt="blogImage">       
+</div>
+</div>
+</div>
+{% endif %}
+
+
+{% if user.is_authenticated %}
+
+  <a href="{% url 'update_Blog' blogobj.id %}">Update</a>
+  
+{% endif %}
+
+
+</div>
+{% endblock content %}

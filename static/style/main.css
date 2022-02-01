@@ -1,0 +1,102 @@
+.navbg{
+background-color: #2b0404;    
+
+}
+
+.nav-item{
+    text-transform: uppercase;
+    margin: 2px 5px;
+    font-size: small;     
+}
+
+.nav-item:hover {  
+    background-color:#fff;
+    text-decoration: underline;
+}
+
+.container-fluid{
+    
+    color: #fff;
+}
+.sidecard {
+background-color: rgb(53, 144, 218);
+height: 100vh;
+
+}
+
+
+
+.card-img-top{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    
+}
+.list-group-item img{
+    width: 25px;
+}
+
+.intro{
+    color: #fff;
+    font-family:cursive;
+
+}
+
+.list-group{
+background-color: #5e788a;
+margin: 1px;
+
+}
+
+.list-group li{
+
+    background-color:rgb(53, 144, 218);
+    border: 1px groove ;
+    color:#fff;
+
+}
+ .bg1{
+    background-color:rgb(53, 144, 218);
+
+ }   
+
+
+
+.orgName{
+    
+    text-align: center;
+    background-color : #134f5c;
+    font-family:monospace;
+    text-transform: uppercase;
+    box-shadow: 2px 5px #added9;
+}
+
+.boxShadow{
+    box-shadow: 2px 5px #df4c32;
+}
+
+
+.Position{
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+.orgIntro{
+    text-align:center;  
+    padding-left: 5px;
+    font-size: 15px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+}    
+    
+.sideHeading {
+    color: #fff;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background-color: rgb(53, 144, 218);
+    padding: 8px;
+    border-color: rgb(53, 144, 218);
+    border-width: 0px 75px 0px 75px;
+    
+    
+}

@@ -1,0 +1,31 @@
+
+<!-- Header Section -->
+{% load static %}
+<header class="header">
+  <div class="container container--narrow">
+    <a href="/" class="header__logo">
+      <img src="{% static 'images/iMTIYAZ.svg' %}" alt="Logo" />
+    </a>
+    <nav class="header__nav">
+      <input type="checkbox" id="responsive-menu" />
+      <label for="responsive-menu" class="toggle-menu">
+        <span>Menu</span>
+        <div class="toggle-menu__lines"></div>
+      </label>
+      <ul class="header__menu", style="text-transform: uppercase;">
+        <li class="header__menuItem"><a href="{% url 'user-profile' %}">Profile</a></li>
+        <li class="header__menuItem"><a href="projects.html">Projects</a></li>    
+              {% if request.user.is_authenticated %} 
+        <li class="header__menuItem"><a href="{% url 'creat_Category' %}">creatCategory</a></li>
+        <li class="header__menuItem"><a href="{% url 'creat_Blog' %}">CreatBlog</a></li>
+      
+        <li class="header__menuItem"><a href="{% url 'logout' %}" class="btn btn--sub">Logout</a></li>
+      {% else %}
+        <li class="header__menuItem"><a href="{% url 'loginPage' %}" class="btn btn--sub">Login</a></li>
+      {% endif %}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+
